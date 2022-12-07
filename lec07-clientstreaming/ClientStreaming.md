@@ -1,5 +1,6 @@
-server / main.go
+**server / main.go**
 
+```
 // 서버는 클라이언트 단에서 보낸 데이터의 개수를 세어 나온 값을 클라이언트 단으로 전송한다.
 func (s *server) GetServerResponse(stream pb.ClientStreaming_GetServerResponseServer) error {
 	log.Println("Server processing gRPC client streaming")
@@ -21,8 +22,11 @@ func (s *server) GetServerResponse(stream pb.ClientStreaming_GetServerResponseSe
 		count++
 	}
 }
+```
 
-client / main.go
+**client / main.go**
+
+```
 	done := make(chan bool)
 
 	go func() {
@@ -42,3 +46,5 @@ client / main.go
 		close(done)
 	}()
 	<-done
+	
+```
