@@ -5,7 +5,7 @@
 <br>
 
 **.proto 파일**
-<br>
+
 protoc --go_out=. --go_opt=paths=source_relative \
     --go-grpc_out=. --go-grpc_opt=paths=source_relative \
     [.proto가 담겨 있는 폴더 이름]/[name].proto
