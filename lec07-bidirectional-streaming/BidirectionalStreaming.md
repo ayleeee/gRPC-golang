@@ -1,5 +1,6 @@
-server / main.go
+**server / main.go**
 
+```
 // 클라이언트가 5개의 정보를 보낼 예정이고 한꺼번에 처리할 것이기 때문에 배열을 만들어준다.
 var receivedMsg [5]string
 var i int = -1
@@ -34,8 +35,11 @@ func (s server) GetServerResponse(stream pb.Bidirectional_GetServerResponseServe
 		}
 	}
 }
+```
 
-client / main.go
+**client / main.go**
+
+```
 	done := make(chan bool)
 
 	// 1. 데이터를 만들어서 서버단으로 전송한다.
@@ -71,3 +75,4 @@ client / main.go
 		}
 	}()
 	<-done
+```
