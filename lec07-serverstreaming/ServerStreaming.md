@@ -1,5 +1,6 @@
-server / main.go
+**server / main.go**
 
+```
 func (s server) GetServerResponse(in *pb.Number, srv pb.ServerStreaming_GetServerResponseServer) error {
 	msg := "Server processing gRPC server-streaming"
 	log.Println(msg)
@@ -13,8 +14,11 @@ func (s server) GetServerResponse(in *pb.Number, srv pb.ServerStreaming_GetServe
 	}
 	return nil
 }
+```
 
-client / main.go
+**client / main.go**
+
+```
     // protoBuffer에 설정된 값의 이름을 그대로 사용하여 보내고자 하는 숫자를 담는다.
 	var val int32 = 5
 	in := &pb.Number{Value: val}
@@ -43,3 +47,4 @@ client / main.go
 		}
 	}()
 	<-done
+```
